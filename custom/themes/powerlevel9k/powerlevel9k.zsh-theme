@@ -351,6 +351,7 @@ prompt_battery() {
   set_default POWERLEVEL9K_BATTERY_LOW_THRESHOLD  10
 
   if [[ $OS =~ OSX && -f /usr/sbin/ioreg && -x /usr/sbin/ioreg ]]; then
+    echo "do something"
     # Pre-Grep as much information as possible to save some memory and
     # avoid pollution of the xtrace output.
     local raw_data="$(ioreg -n AppleSmartBattery | grep -E "MaxCapacity|TimeRemaining|CurrentCapacity|ExternalConnected|IsCharging")"
